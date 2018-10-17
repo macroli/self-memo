@@ -1,0 +1,13 @@
+Update of child pom versions with versions maven plugin
+
+If you change the version of the parent pom version and you have a multi-module project you can change the version of the child projects by changing the version in the parent project and execute the following command:
+
+mvn -N versions:update-child-modules
+This will change all versions of the child projects.
+
+If you want to change it explicit from the shell to the new version 'X.Y.Z-SNAPSHOT' you can execute the following command:
+
+mvn versions:set versions:update-child-modules -DnewVersion=X.Y.Z-SNAPSHOT
+The advantage of this approach is that you do not have to touch any of the pom.xml files.
+
+For a more detailed explanation you can follow this link.
