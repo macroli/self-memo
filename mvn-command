@@ -11,3 +11,10 @@ mvn versions:set versions:update-child-modules -DnewVersion=X.Y.Z-SNAPSHOT
 The advantage of this approach is that you do not have to touch any of the pom.xml files.
 
 For a more detailed explanation you can follow this link.
+
+1. mvn dependency:analyze
+2. mvn dependency:tree
+* 		mvn dependency:tree
+* 		mvn dependency:tree -Dverbose 简单地用dependency:tree往往并不能查看到所有的传递依赖。不过如果你真的想要看所有的，必须得加一个-Dverbose参数，这时就必定是最全的了
+* 		mvn dependency:tree -Dincludes 加上Dincludes或者Dexcludes，dependency:tree就会帮你过滤出来; 例如： -Dincludes=org.springframework:spring-tx ；过滤串使用groupId:artifactId:version的方式进行过滤，可以不写全
+
