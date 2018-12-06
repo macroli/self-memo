@@ -1,0 +1,6 @@
+#List docker image on server
+sudo docker ps
+#Enter docker image app
+sudo docker exec -it image-name(e.g 587ea62a373f) bash
+#check java version out of image app
+sudo docker exec image-name java -version
